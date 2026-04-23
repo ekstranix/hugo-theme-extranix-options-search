@@ -148,6 +148,10 @@
         </tbody>
       </table>
 
+      <div id="resultCapMessage" class="hidden" style="padding: 8px 0; text-align: center; color: #777;">
+        <span id="resultCapText"></span> — <a href="#" id="showAllResults">Show all</a>
+      </div>
+
       <div id="loadingProgressBar" class="progress">
         <div class="progress-bar progress-bar-striped active"
              role="progressbar"
@@ -168,6 +172,9 @@
       </div>
     </footer>
     <input type="hidden" id="release_current_stable" value="{{ .Site.Params.release_current_stable }}" />
+    {{ with .Site.Params.search_debounce_ms }}<input type="hidden" id="search_debounce_ms" value="{{ . }}" />{{ end }}
+    {{ with .Site.Params.search_max_results }}<input type="hidden" id="search_max_results" value="{{ . }}" />{{ end }}
+    {{ with .Site.Params.search_sort_min_chars }}<input type="hidden" id="search_sort_min_chars" value="{{ . }}" />{{ end }}
 
     <script type="text/javascript" src="https://unpkg.com/js-search@2.0.1/dist/umd/js-search.min.js"></script>
     <script type="text/javascript" src="js/script.js?version=2024-04-26"></script>
