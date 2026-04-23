@@ -168,6 +168,7 @@
         </p>
         <p>
           {{ with .Site.Params.footer_copyright_line }}{{ . | safeHTML }}{{ end }}
+          {{ if not .Site.Params.hide_parent_site }} · <a href="https://extranix.com">extranix.com</a>{{ end }}
         </p>
       </div>
     </footer>
